@@ -1,0 +1,38 @@
+/*Questão 5. Crie uma matriz bidimensional. Deverá ser solicitado três nomes de alunos e quatro notas, após solicitação dos nomes e das notas deverá ser impresso os nomes acompanhados da média geral de cada aluno, deverá ser impresso também o nome do aluno que obteve a maior média e o nome do aluno que obteve a menor média.*/
+class Program
+{
+    static void Main(string[] args)
+    {
+        string[] nomes = new string[3];
+        double[,] notas = new double[4, 4];
+
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine("Digite o nome do aluno " + (i + 1) + ":");
+            nomes[i] = Console.ReadLine();
+
+            for (int j = 0; j < 4; j++)
+            {
+                Console.WriteLine("Digite a nota " + (j + 1) + " do aluno " + nomes[i] + ":");
+                notas[i, j] = Convert.ToDouble(Console.ReadLine());
+            }
+            Console.Clear();
+        }
+        double maiorMedia = 0;
+        string nomeMaiorMedia = "";
+        for (int i = 0; i < 4; i++)
+        {
+            double media = (notas[i, 0] + notas[i, 1] + notas[i, 2] + notas[i, 3])/ 4;
+
+            if (media > maiorMedia)
+            {
+                maiorMedia = media;
+                nomeMaiorMedia = nomes[i];
+            }
+        }
+
+        Console.WriteLine($"O aluno com a maior média é {nomeMaiorMedia} com média igual a {maiorMedia}");
+    }
+}
+
+
