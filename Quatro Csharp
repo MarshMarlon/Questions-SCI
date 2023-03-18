@@ -1,0 +1,10 @@
+/*Questão 4. Criar um vetor de cinco posições, solicitar  cinco números e ao fim, imprimir o valor apresentado na posição três.*/
+
+int[] vetor = new int[5];
+
+for (int i = 0; i < vetor.Length; i++)
+{
+    Console.WriteLine("Insira valor do vetor");
+    vetor[i] = int.Parse(Console.ReadLine());
+}
+Console.WriteLine("Valor do vetor da posição três:" + vetor[2]);
