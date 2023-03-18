@@ -1,0 +1,61 @@
+/*Questão 3. Elabore um programa de computador que realize o cálculo de notas. Este programa deverá solicitar o nome do aluno e quatro notas, todo este conjunto deverá estar contido em um laço que confirme se deseja encerrar o programa ou continuar solicitando outros nomes e notas.
+Ao final da solicitação do nome e das notas deverá ser impresso o nome do aluno e a sua média, se a nota for  menor que 6 imprimir Reprovado, senão, se a nota for igual ou maior que 6, imprimir Aprovado.*/
+
+
+while (true)
+{
+    double[] notas = new double[4];
+    Console.WriteLine("Insira o nome do aluno");
+    string nomeAluno = (Console.ReadLine());
+    Console.WriteLine("Insira as 4 notas do aluno");
+    
+    for (int i = 0; i < notas.Length; i++)
+    {
+        notas [i] = int.Parse(Console.ReadLine());
+    }
+    Console.Clear();
+    Console.WriteLine(nomeAluno);
+
+    if (notas.Average() >= 6)
+    {
+        Console.WriteLine("Situação: Aprovado");
+    }
+    else
+    {
+        Console.WriteLine("Situação: Reprovado");
+    }
+
+    Console.WriteLine("Deseja efetuar novo cálculo? Insira 'sim' ou 'não'");
+    string resposta = (Console.ReadLine());
+    if (resposta == "sim")
+    {
+
+    }
+    else if (resposta == "não")
+    {
+        Console.Clear();
+        Console.WriteLine("Obrigado!");
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Resposta inválida");
+        while (!(resposta == "sim" || resposta == "não"))
+        {
+            Console.WriteLine("Favor inserir 'sim' ou 'não'");
+            resposta = Console.ReadLine();
+            if (resposta == "sim")
+            {
+
+            }
+            else if (resposta == "não")
+            {
+                Console.Clear();
+                Console.WriteLine("Obrigado!");
+                return;
+            }
+        }
+        Console.Clear();
+
+    }
+}
