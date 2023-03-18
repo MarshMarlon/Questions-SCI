@@ -1,0 +1,37 @@
+/*Questão 1. Solicitar a inserção de 5 números, ao final, imprimir os números pares, números ímpares e a média geral desses números.*/
+
+int[] numeros = new int[5];
+List<int> numeroPar = new List<int>();
+List<int> numeroImpar = new List<int>();
+for (int i = 0; i < numeros.Length; i++)
+{
+    Console.WriteLine("Informe o número.");
+    numeros[i] = int.Parse(Console.ReadLine());
+   
+    if (numeros[i] % 2 == 0)
+    {
+
+       numeroPar.Add(numeros[i]);
+        
+    }
+    else
+    {
+        numeroImpar.Add(numeros[i]);
+    }
+}
+Console.WriteLine("Números Pares");
+foreach (int num in numeroPar)
+{
+
+    Console.WriteLine(num);
+}
+Console.WriteLine("Números impares");
+foreach (int num in numeroImpar)
+{
+    Console.WriteLine(num);
+}
+
+Console.WriteLine("Essa é a média geral");
+Console.WriteLine(Convert.ToString(numeros.Average()));
+
+    
